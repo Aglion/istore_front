@@ -1,0 +1,87 @@
+@use '../../app/responsive.scss' as adaptive;
+
+.wrapper {
+    max-width: var(--max-width);
+    width: 90%;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 40px;
+    gap: 80px;
+}
+
+.wrp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.h1 {
+    white-space: nowrap;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.h5 {
+    white-space: nowrap;
+    font-size: 25px;
+    font-weight: 300;
+    margin-top: 22px;
+}
+
+.img {
+    width: 100%;
+    margin-block: auto;
+}
+
+.imgmobile {
+    width: 80%;
+    height: auto;
+    flex-shrink: 1;
+    flex: 1;
+
+    display: none;
+}
+
+@media screen and (max-width: adaptive.$md) {
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .wrp {
+        align-items: center;
+    }
+
+    .h1 {
+        text-align: center;
+    }
+
+    .h5 {
+        text-align: center;
+        white-space: break-spaces;
+    }
+}
+
+@media screen and (max-width: adaptive.$sm) {
+    .h1 {
+        font-size: 22px;
+    }
+
+    .h5 {
+        font-size: 14px;
+    }
+
+    .imgmobile {
+        display: block;
+        margin-bottom: 50px;
+    }
+
+    .img {
+        display: none;
+    }
+}

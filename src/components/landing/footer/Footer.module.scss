@@ -1,0 +1,59 @@
+@use '../../../app/responsive.scss' as adaptive;
+
+.footer {
+    background-color: black;
+    padding-block: 75px 100px;
+    margin-top: 60px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.wrp {
+
+    max-width: var(--max-width);
+    width: 90%;
+    margin-inline: auto;
+
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+
+
+    &>.nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+
+        &>a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+    
+    &>.phone {
+        color: white;
+    }
+
+
+}
+
+.of {
+    max-width: var(--max-width);
+    width: 90%;
+    margin-inline: auto;
+
+    color: white;
+    opacity: 0.4;
+}
+
+@media screen and (max-width: adaptive.$md) {
+    .wrp {
+        flex-direction: column;
+        gap: 30px;
+        align-items: flex-start;
+    }
+}

@@ -1,0 +1,92 @@
+@use '../../../app/responsive.scss' as adaptive;
+
+.wrapper {
+    max-width: var(--max-width);
+    width: 90%;
+    margin-inline: auto;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-block: 90px 55px;
+
+    &>h4 {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: adaptive.$sm) {
+    .title {
+        padding-block: 36px 26px;
+        flex-direction: column;
+        text-align: center;
+
+        &>h4 {
+            font-size: 28px;
+        }
+    }
+}
+
+.main {
+    background-image: url('/serviceback.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    color: white;
+    border-radius: 22px;
+    padding-block: 100px;
+    padding-inline: 60px;
+
+    &>h4 {
+        font-size: 49px;
+        font-weight: 600;
+    }
+
+    &>h5 {
+        font-size: 25px;
+        font-weight: 400;
+    }
+
+    &>a {
+        text-decoration: none;
+        padding: 12px 24px;
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        border-radius: 30px;
+        font-size: 18px;
+        font-weight: 100;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: adaptive.$sm) {
+    .main {
+        padding-inline: calc(var(--padding) * 5);
+        padding-block: 60px;
+        align-items: center;
+
+        &>h4 {
+            font-size: 6.7vw;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        &>h5 {
+            font-size: 5vw;
+            text-align: center;
+        }
+    }
+}

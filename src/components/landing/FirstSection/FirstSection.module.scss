@@ -1,0 +1,136 @@
+@use '../../../app/responsive.scss' as adaptive;
+
+.wrapper {
+    background-color: black;
+    min-height: 100dvh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block: 80px;
+
+    &>div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+}
+
+.title {
+    font-size: 5vw;
+    font-weight: 700;
+
+    margin-bottom: 6px;
+
+
+    transform: translateY(300px);
+    opacity: 0.0;
+
+    animation: slideInBottom .7s forwards cubic-bezier(0.000, 0.085, 0.000, 1.015);;
+    animation-delay: 0s;
+}
+
+@media screen and (max-width: adaptive.$sm) {
+    .title {
+        font-size: 7vw;
+    }
+}
+
+.subTitle {
+    font-size: 25px;
+    font-weight: 300;
+    text-align: center;
+
+    margin-bottom: 32px;
+
+    transform: translateY(300px);
+    opacity: 0.0;
+
+    animation: slideInBottom .7s forwards cubic-bezier(0.000, 0.085, 0.000, 1.015);;
+    animation-delay: .1s;
+}
+
+.byButton {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 12px 24px;
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    transform: translateY(300px);
+    opacity: 0.0;
+
+    animation: slideInBottom .7s forwards cubic-bezier(0.000, 0.085, 0.000, 1.015);;
+    animation-delay: .2s;
+}
+
+.byLink {
+    text-decoration: none;
+}
+
+.img {
+
+    margin-top: 40px;
+
+    transform: translateX(200vw);
+
+    animation: slideInRight .7s forwards cubic-bezier(0.000, 0.085, 0.000, 1.015);;
+    animation-delay: .3s;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(200vw);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInBottom {
+    0% {
+        transform: translateY(300px);
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@media screen and (max-width: adaptive.$sm) {
+    .wrapper {
+        min-height: 90vh;
+        justify-content: center;
+
+        padding: 0px;
+        padding-top: 80px;
+
+        &>div {
+            flex: 1;
+        }
+    }
+
+    .img {
+        width: 85%;
+        bottom: 0;
+        justify-self: center;
+        content: url('/iphn.png');
+        animation: slideInBottom .3s forwards;
+        animation-delay: .3s;
+    }
+}

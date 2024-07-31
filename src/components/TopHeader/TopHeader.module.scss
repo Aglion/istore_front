@@ -1,0 +1,40 @@
+@use '../../app/responsive.scss' as adaptive;
+
+.nav {
+    background-color: #262626;
+    padding-block: 20px;
+
+    &>div {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        max-width: var(--max-width);
+        width: 90%;
+        margin-inline: auto;
+    }
+}
+
+@media screen and (max-width: adaptive.$md) {
+    .nav {
+        display: none;
+    }
+}
+
+
+
+.innerNav {
+    display: flex;
+    gap: 20px;
+
+    &>a {
+        font-size: 14px;
+    }
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+    font-weight: 100;
+}

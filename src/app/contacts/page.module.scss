@@ -1,0 +1,125 @@
+@use "../responsive.scss" as adaptive;
+
+.section {}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: 60px;
+    gap: 14px;
+    font-weight: 600;
+    max-width: 1920px;
+    width: 90%;
+    margin-inline: auto;
+
+    &>h3 {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: adaptive.$sm) {
+    .title {
+        &>h3 {
+            font-size: 28px;
+        }
+    }
+}
+
+.contacts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    max-width: var(--max-width);
+    width: 90%;
+    margin-inline: auto;
+
+    &>div {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+        border-radius: 22px;
+        background-color: #F1F1F1;
+        padding: calc(var(--padding) * 2);
+    }
+}
+
+@media screen and (max-width: adaptive.$md) {
+    .contacts {
+        grid-template-columns: repeat(1, 1fr);
+
+        &>div {
+            padding: calc(var(--padding) * 5);
+        }
+    }
+}
+
+.smallTitle {
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.workTime {
+    font-size: 24px;
+    font-weight: 200;
+}
+
+.phone {
+    font-size: 30px;
+    font-weight: 400;
+    color: black;
+}
+
+.adress {
+    font-size: 30px;
+    font-weight: 400;
+    color: black;
+}
+
+.sm {
+    font-weight: 300;
+    font-size: 25px;
+    text-decoration: underline;
+    color: black;
+}
+
+.maps {
+    width: 100%;
+    margin-top: 60px;
+    aspect-ratio: 16/5;
+    border: none;
+}
+
+@media screen and (max-width: adaptive.$sm) {
+    .maps {
+        aspect-ratio: 1/1;
+    }
+}
+
+@media screen and (max-width: adaptive.$md) {
+    .maps {
+        aspect-ratio: 1/1;
+    }
+
+    .title {
+        padding-block: 35px;
+        font-size: 38px;
+    }
+
+    .smallTitle {
+        font-size: 16px;
+    }
+
+    .workTime {
+        font-size: 18px;
+    }
+
+    .phone {
+        font-size: 24px;
+    }
+
+    .sm {
+        font-size: 18px;
+    }
+
+}

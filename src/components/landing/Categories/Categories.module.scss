@@ -1,0 +1,136 @@
+@use "../../../app/responsive.scss" as adaptive;
+
+.wrapper {
+    max-width: var(--max-width);
+    width: 90%;
+    margin-inline: auto;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+
+    &>h2 {
+        font-size: 40px;
+    }
+
+    padding-block: 65px;
+}
+
+@media screen and (max-width: adaptive.$md) {
+    .title {
+        padding-block: 36px 23px;
+    }
+}
+
+@media screen and (max-width: adaptive.$sm) {
+    .title {
+        flex-direction: column;
+        text-align: center;
+        &>h2 {
+            font-size: 28px;
+        }
+    }
+}
+
+.categories {
+    display: grid;
+    grid-template:
+        "iphone Watch AirPods"
+        "iphone iPad Mac"
+        "gagets consoles dyson";
+    ;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+
+    &>a:not(:first-child) {
+        height: 45vh;
+        max-height: 550px;
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: adaptive.$md) {
+    .categories {
+        grid-template:
+            "iphone AirPods" 
+            "Watch Mac" 
+            "dyson consoles"
+            "gagets iPad";
+        ;
+        grid-template-columns: 1fr 1fr;
+        &>a:not(:first-child) {
+            max-height: 600px;
+        }
+        &>a {
+            max-height: 600px;
+        }
+    }
+}
+@media screen and (max-width: adaptive.$sm) {
+    .categories {
+        grid-template:
+            "iphone" 1fr
+            "AirPods" 1fr
+            "Watch" 1fr
+            "Mac" 1fr
+            "iPad" 1fr
+            "dyson" 1fr
+            "consoles" 1fr
+            "gagets" 1fr;
+        ;
+        grid-template-columns: 1fr;
+        &>a:not(:first-child) {
+            max-height: 600px;
+        }
+        &>a {
+            max-height: 600px;
+        }
+    }
+}
+
+.category {
+    position: relative;
+
+    border-radius: 22px;
+    background-color: #F1F1F1;
+    padding: 30px;
+    color: black;
+    text-decoration: none;
+
+    min-height: 320px;
+
+    cursor: pointer;
+
+    &>h4 {
+        font-size: 34px;
+        font-weight: 300;
+    }
+
+    &>img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        max-width: 100%;
+        width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        object-position: 100%;
+        z-index: -1;
+        mix-blend-mode: darken;
+    }
+}
+
+.ps {
+    &>h4   {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+    &>img {
+        transform: translateY(30px);
+    }
+}

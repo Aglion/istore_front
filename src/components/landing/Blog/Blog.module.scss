@@ -1,0 +1,82 @@
+@use '../../../app/responsive.scss' as adaptive;
+
+.wrapper {
+    max-width: var(--max-width);
+    width: 90%;
+    margin-inline: auto;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: 95px 45px;
+    font-size: 40px;
+    gap: 8px;
+}
+
+@media screen and (max-width: adaptive.$sm) {
+    .title {
+        padding-block: 35px 28px;
+        flex-direction: column;
+        text-align: center;
+        font-size: 28px;
+    }
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+
+    &>div {
+        background-color: #F1F1F1;
+        border-radius: 22px;
+        padding: 60px;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &>div {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 22px;
+        }
+
+        &>h5 {
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        &>a {
+            cursor: pointer;
+            width: min-content;
+            white-space: pre;
+            margin-top: 4px;
+            color: black;
+            text-decoration: none;
+        }
+    }
+}
+
+@media screen and (max-width: adaptive.$sm) {
+    .main {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+        &>div {
+            padding: calc(var(--padding) * 7);
+        }
+    }
+}
+
+.viewAll {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    
+    &>a {
+        color: black;
+    }
+}
